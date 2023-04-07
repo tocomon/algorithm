@@ -1,12 +1,7 @@
-a = 100
-if a>=90:
-    b="A"
-elif a>=80:
-    b="B"
-elif a>=70:
-    b="C"
-elif a>=60:
-    b="D"
-else:
-    b="F"
-print(b)
+a = [1, 2, 3, 4, 5]
+x=a[0]
+y=a[1]
+w=a[2]
+h=a[3]
+
+print(min(x,y,w-x,h-y))
