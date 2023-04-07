@@ -1,4 +1,6 @@
-a = 100
+import sys
+a = int(sys.stdin.readline().strip())
+
 if a>=90:
     b="A"
 elif a>=80:
