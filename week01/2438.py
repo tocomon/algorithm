@@ -14,4 +14,5 @@ for i in range(n):
         star+="*"
         stars.append(star)
 
-print(stars)
+for i in range(n):
+    print(stars[i])
