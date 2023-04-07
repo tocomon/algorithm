@@ -1,19 +1,18 @@
 import sys
-
 n = int(sys.stdin.readline())
-a = [sys.stdin.readline()[:-1] for i in range(n)]
+a = [sys.stdin.readline()[:-1] for i in range(n)]  
 
-b = []
-c = []
+b=[]
+c=[]
 
 for i in a:
-    c = i.split("X")
-    d = list(filter(lambda x: x.strip(), c))
+    c=i.split("X")
+    d=list(filter(lambda x: x.strip(), c))
     b.append(d)
 
-f = []
+f=[]
 for j in b:
-    e = []
+    e=[]
     for k in j:
         e.append(len(k))
     f.append(e)
@@ -26,11 +25,22 @@ def fibonacci(n):
     else:
         return fibonacci(n-1) + fibonacci(n-2)
 
-g = []
-for l in f:
-    e = []
-    for m in l:
-        e.append(fibonacci(m))
-    g.append(sum(e))
 
-print(g)
+g=[]
+for l in f:
+    h=[]
+    for m in l:
+        z=0
+        for i in range(m+1):
+            z+=i
+        h.append(z)
+
+    g.append(sum(h))
+
+
+for i in g:
+    print(i)
+
+
+    
+
