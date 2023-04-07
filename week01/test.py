@@ -1,7 +1,11 @@
-a = [1, 2, 3, 4, 5]
-x=a[0]
-y=a[1]
-w=a[2]
-h=a[3]
+a=2
 
-print(min(x,y,w-x,h-y))
+print(str(a)+" * 1 = "+str(a))
+# print(a+" * 2 = "+2*a)
+# print(a+" * 3 = "+3*a)
+# print(a+" * 4 = "+4*a)
+# print(a+" * 5 = "+5*a)
+# print(a+" * 6 = "+6*a)
+# print(a+" * 7 = "+7*a)
+# print(a+" * 8 = "+8*a)
+# print(a+" * 9 = "+9*a)
