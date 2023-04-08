@@ -1,3 +1,7 @@
+import sys  
+n = int(input())  
+a = list(map(int, sys.stdin.readline().split()))
+
 def is_prime(num):
     if num < 2:  # 1과 0은 소수가 아님
         return False
@@ -6,12 +10,11 @@ def is_prime(num):
             return False
     return True
 
-n = int(input())
-arr = list(map(int, input().split()))
+prime=0
+for i in a:
+    if is_prime(i):
+        prime += 1
 
-count = 0
-for num in arr:
-    if is_prime(num):
-        count += 1
+        
 
-print(count)
+print(prime)
