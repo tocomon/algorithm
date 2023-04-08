@@ -16,7 +16,7 @@ for i in a:
         num1=i/2+j
         num2=i/2-j
         if is_prime(num1) and is_prime(num2):
-            print(str(int(num1)) + " " + str(int(num2)))
+            print(str(int(num2)) + " " +str(int(num1)))
             break
 
 
