@@ -1,25 +1,15 @@
-def find_order(n, r, c):
-    if n == 0:
-        return 0
-    
-    size = 2 ** (n-1)
-    part_size = size ** 2
-    part = 0
-    
-    if r < size and c < size:
-        part = 0
-    elif r < size and c >= size:
-        part = 1
-        c -= size
-    elif r >= size and c < size:
-        part = 2
-        r -= size
-    else:
-        part = 3
-        r -= size
-        c -= size
-    
-    return part_size * part + find_order(n-1, r, c)
+import sys
 
-n, r, c = map(int, input().split())
-print(find_order(n, r, c))
+N = int(sys.stdin.readline())
+counts = [0] * 10001
+
+# 각 숫자의 개수를 count
+for i in range(N):
+    num = int(sys.stdin.readline())
+    counts[num] += 1
+
+# counts 배열을 처음부터 끝까지 순회하며 오름차순으로 출력
+for i in range(10001):
+    while counts[i] > 0:
+        print(i)
+        counts[i] -= 1
