@@ -30,5 +30,21 @@ def n_queen(n):
     backtrack(0)
     return count
 
-n = int(input())
+import sys
+n = int(sys.stdin.readline())
 print(n_queen(n))
+
+
+
+
+
+# from itertools import permutations
+# N=n
+# sol=0
+# result=[]
+# cols = range(N)
+# for combo in permutations(cols):                      
+#     result.append(combo)
+#     if N==len(set(combo[i]+i for i in cols))==len(set(combo[i]-i for i in cols)):
+#         sol += 1
+# print(sol)
