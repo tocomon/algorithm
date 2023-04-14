@@ -1,3 +1,10 @@
+# input
+# 5
+# 4 1 5 2 3
+# 5
+# 1 3 7 9 5
+
+
 import sys
 
 N = int(sys.stdin.readline().strip())
@@ -15,6 +22,7 @@ for i in range(M):
         mid = (left + right) // 2
         if a[mid] == b[i]:
             found = True
+            
             break
         elif a[mid] < b[i]:
             left = mid + 1
@@ -25,6 +33,13 @@ for i in range(M):
     else:
         print(0)
 
+
+# output
+# 1
+# 1
+# 0
+# 0
+# 1
 
 
 # 시간 초과
