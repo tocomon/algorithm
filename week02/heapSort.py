@@ -24,10 +24,14 @@ def heap_sort(a: MutableSequence) -> None:
 
     for i in range((n - 1) // 2, -1, -1):   # a[i] ~ a[n-1]을 힙으로 만들기
         down_heap(a, i, n - 1)
+        print(-1,-1)
+        print(a)
 
     for i in range(n - 1, 0, -1):
         a[0], a[i] = a[i], a[0]     # 최댓값인 a[0]과 마지막 원소 a[i]를 교환
         down_heap(a, 0, i - 1)      # a[0] ~ a[i-1]을 힙으로 만들기
+        print(0,1)
+        print(a)
 
 if __name__ == '__main__':
     print('힙 정렬을 수행합니다.')
