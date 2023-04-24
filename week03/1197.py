@@ -24,7 +24,6 @@ def get_parent(x):
 def union_parent(a, b):
     a = get_parent(a)
     b = get_parent(b)
-
     if a < b: # 작은 쪽이 부모가 된다. (한 집합 관계라서 부모가 따로 있는 건 아님)
         parent[b] = a
     else:
