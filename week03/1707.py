@@ -9,7 +9,8 @@ def dfs(start):
     visited[start] = True 
     for i in graph[start]:
         if not visited[i]:
-            check[i] = (check[start]+1)%2
+            check[i] = (check[start]+1)%2 # ?
+            print(check)
             dfs(i)
         elif check[start] == check[i]:
             isValid =False
@@ -17,11 +18,11 @@ def dfs(start):
 n = int(input())
 
 for i in range(n):
-    isValid = True
+    isValid = True # 이분 그래프 판단
     v, e= map(int, input().split())
     visited = [False] * (v + 1)
     graph = [[] for _ in range(v+1)]
-    check = [0] * (v+1)
+    check = [0] * (v+1) # 노드색 1 0 
     for j in range(e):
         a, b = map(int, input().split())
         graph[a].append(b)
@@ -35,5 +36,4 @@ for i in range(n):
         print("YES")
     else:
         print("NO")
-
 
