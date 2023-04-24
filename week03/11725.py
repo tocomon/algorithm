@@ -3,19 +3,11 @@ from collections import deque
 sys.setrecursionlimit(10**8)
 input = sys.stdin.readline
 
-def dfs(node, parent, depth, graph, parent_list):
+def dfs(node, parent, graph, parent_list):
     parent_list[node] = parent      
     for child in graph[node]:
         if child != parent:
-            dfs(child, node, depth+1, graph, parent_list)
-
-def bfs(start, graph, parent_list):
-    queue = deque([start])
-    while queue:
-        v = queue.popleft()
-        for i in graph[v]:
-            parent_list[i] = v
-            queue.append(i)
+            dfs(child, node, graph, parent_list)
 
 n = int(input())
 graph = [[] for _ in range(n+1)]
@@ -29,7 +21,7 @@ for i in range(n-1):
     except:
         break
 
-dfs(1, 0, 0, graph, parent_list)
+dfs(1, 0, graph, parent_list)
 
 for i in parent_list[2:]:
     print(i)

@@ -10,7 +10,6 @@ def dfs(start):
     for i in graph[start]:
         if not visited[i]:
             check[i] = (check[start]+1)%2 # ?
-            print(check)
             dfs(i)
         elif check[start] == check[i]:
             isValid =False
