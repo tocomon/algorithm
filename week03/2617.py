@@ -1,9 +1,9 @@
 ## DFS with stack
 import sys
 from collections import deque
-input=sys.stdin.readline
+input = sys.stdin.readline
 
-N, M =map(int,input().split())
+N, M = map(int,input().split())
 
 bigger_lst=[[] for _ in range(N+1)]  # index보다 큰 수
 smaller_lst=[[] for _ in range(N+1)]  # index보다 작은 수
