@@ -1,18 +1,33 @@
+n, k = map(int, input().split())
+c = []
+dp = [0 for i in range(k + 1)]
+for i in range(n):
+    c.append(int(input()))
+for i in range(1, k + 1):
+    a = []
+    for j in c:
+        if j <= i and dp[i - j] != -1:
+            a.append(dp[i - j])
+    if not a:
+        dp[i] = -1
+    else:
+        dp[i] = min(a) + 1
+print(dp[k])
+
+
+
 from sys import stdin
 
 n, k = map(int, stdin.readline().split())
-
 li =[]
-
 for i in range(n):
    li.append(int(stdin.readline().rstrip()))
-
 dp = [10001] * (k+1)
 dp[0] = 0
 
 for num in li:
    for i in range(num, k+1):
-       dp[i] = min(dp[i],dp[i-num]+1)
+      dp[i] = min(dp[i],dp[i-num]+1)
 if dp[k] == 10001:
    print(-1)
 else:
