@@ -11,13 +11,13 @@ for i in range(n):
 
 a.sort(key=lambda x: (x[1], x[0]))
 
-endtime=a[0][1]
-count=1
+end=0
+count=0
 
-for s, e in a[1:]:
-    if s >= endtime:
+for s, e in a:
+    if s >= end:
         count += 1
-        endtime=e
+        end=e
         
 print(count)
 
