@@ -5,6 +5,7 @@ sys.stdin.readline() > raw_input() > input()
 import sys
 input = sys.stdin.readline
 sys.setrecursionlimit(10**8)
+
 a = list(map(int, input().split()))
 a = [*map(int, input()), M]
 a = [input() for i in range(n)] 
