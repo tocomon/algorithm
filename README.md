@@ -12,10 +12,10 @@ a = [input() for i in range(n)] <br>
 a = sorted([int(input()) for _ in range(n)]) <br>
 a = [tuple(map(int, input().split())) for _ in range(n)] <br>
 
-while True:
-    try:
-        a.append(int(input()))
-    except:
-        break
+while True: <br>
+    try: <br>
+        a.append(int(input())) <br>
+    except: <br>
+        break <br>
 
 print(*ans)
