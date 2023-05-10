@@ -1,29 +1,23 @@
-import sys
-import heapq
-input = sys.stdin.readline
-
-n = int(input())
-room = [0] * (n+1)
-lessonInfo = []
-timeTable = []
-
+import sys,heapq
+n = int(sys.stdin.readline())
+load = []
+queue = []
+gang = [0]*n
+room = 0
 for _ in range(n):
-    no, start, end = map(int, input().split())
-    lessonInfo.append([start, end, no])
+    idx,s,e = map(int,sys.stdin.readline().split())
+    load.append([s,e,idx-1])
 
-lessonInfo.sort(key=lambda x: (x[0]))
-
-answer = 0
-for start, end, no in lessonInfo:
-    if timeTable and timeTable[0][0] <= start:
-        room[no] = room[timeTable[0][2]]
-        heapq.heappop(timeTable)
+load.sort()
+for s,e,idx in load:
+    if queue and queue[0][0] <= s:
+        gang[idx] = gang[queue[0][2]]
+        heapq.heappop(queue)
     else:
-        answer += 1
-        room[no] = answer
+        room += 1
+        gang[idx] = room
+    heapq.heappush(queue,(e,s,idx))
 
-    heapq.heappush(timeTable, [end, start, no])
-
-print(answer)
-for i in room[1:]:
+print(room)
+for i in gang:
     print(i)
